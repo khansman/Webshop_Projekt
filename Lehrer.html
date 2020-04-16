@@ -1,0 +1,116 @@
+ <!doctype html>
+
+<html>
+<head>
+	<!--Eliminieren von Seitenrändern-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;}
+	</style>
+	<meta charset="utf-8" lang="de">
+	<title>FinN - Katalog</title>
+	<!--Stylesheet-->
+	<link href="lehrerStyle.css" type="text/css" rel="stylesheet">	
+	<!-- Script -->
+   <script src="Startseite.js"></script>
+   <script src="Lehrer.js"></script>
+   <!-- Schriftart -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 	
+</head>	
+
+<!-- Abfrage ob schon eingeloggt -->
+<body onload="document.getElementById('titel').innerHTML +=' '+sessionStorage.getItem('fach');fuellen();warenkorbInhalt();">
+	<header>	
+			<!--LogIn-Formular-->
+			<div id="HeaderLogin">	
+				<!--Fin-Bild-->
+				<a href="FaecherAlternative.html"><div><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div></a>	
+				<!--Seitentitel-->
+				<!--<div id="titleT"><h1>Nachhilfe</h1></div>	-->
+				<!-- Warenkorb + Profilschriftzug wenn eingeloggt-->
+				<div id="warenkorb">
+					<a href="Warenkorb.html" ><img src="Bilder/warenkorb.jpg" height="40px" align="right" id="warenkorb_Bild"></a>
+					<a href="Profil.html" ><span id="profil">Mein Profil</span></a>	
+					<span id="warenNr">0/3</span>
+				</div>	
+			</div>
+	</header>
+
+<!-- Nachhilfelehrer 1 -->	
+	<div id="titel">Verfügbare Nachhilfelehrer für</div>
+	<div class="container">
+		<img src="Bilder/User.jpg" height="110px;" width="110px;" id="user">
+		<label for="name">Name:</label></br>
+		<input type="text" id="name0" style="margin-bottom:20px;" readonly></br>
+		<div title="In den Warenkorb legen" id="in_warenkorb" onclick="buchung('0');"><img src="Bilder/	in_warenkorb.jpg" height="40px"></div>
+		<label for="ort" style="margin-right:150px;">Veranstaltungsort:</label></br>
+		<input type "text" id="ort0" readonly></p></br>
+		<label for="zeit">Veranstaltungszeiten:</label></br>
+		<select name="Zeiten" id="zeit0" size="5" autocomplete="off"></select>
+		<div class="zeichen" onclick="ausklappen('0');">&#9660 </div>
+		<label id="infoL0" for="info">weitere Informationen:</label>
+		<textarea id="info0" rows="10" cols="58"readonly></textarea>
+	</div>
+	
+<!-- Nachhilfelehrer 2 -->	
+	<div class="container">
+		<img src="Bilder/User1.jpg" height="110px;" width="110px;" id="user">
+		<label for="name">Name:</label></br>
+		<input type="text" id="name1" style="margin-bottom:20px;width:" readonly></br>
+		<div title="In den Warenkorb legen" id="in_warenkorb" onclick="buchung('1');"><img src="Bilder/in_warenkorb.jpg" height="40px"></div>
+		<label for="ort" style="margin-right:150px;">Veranstaltungsort:</label></br>
+		<input type "text" id="ort1"  readonly></p></br>
+		<label for="zeit" >Veranstaltungszeiten:</label></br>
+		<select name="Zeiten" id="zeit1" size="5" autocomplete="off"></select>
+		<div class="zeichen" onclick="ausklappen('1');">&#9660 </div>
+		<label id="infoL1" for="info">weitere Informationen:</label>
+		<textarea id="info1" rows="10" cols="58"readonly></textarea>
+	</div>
+	
+<!-- Nachhilfelehrer 3 -->
+	<div class="container">
+		<img src="Bilder/User2.jpg" height="110px;" width="110px;" id="user">
+		<label for="name">Name:</label></br>
+		<input type="text" id="name2" style="margin-bottom:20px;" readonly></br>
+		<div title="In den Warenkorb legen" id="in_warenkorb" onclick="buchung('2');"><img src="Bilder/in_warenkorb.jpg" height="40px"></div>
+		<label for="ort" style="margin-right:150px;">Veranstaltungsort:</label></br>
+		<input type "text" id="ort2"  readonly></p></br>
+		<label for="zeit">Veranstaltungszeiten:</label></br>
+		<select name="Zeiten" id="zeit2" size="5" autocomplete="off"></select>
+		<div class="zeichen" onclick="ausklappen('2');">&#9660 </div>
+		<label id="infoL2" for="info">weitere Informationen:</label>
+		<textarea id="info2" readonly></textarea>
+	</div>
+	
+<!-- Nachhilfelehrer 4 -->	
+	<div class="container">
+		<img src="Bilder/User3.jpg" height="110px;" width="110px;" id="user">
+		<label for="name">Name:</label></br>
+		<input type="text" id="name3" style="margin-bottom:20px;" readonly></br>
+		<div title="In den Warenkorb legen" id="in_warenkorb" onclick="buchung('3');"><img src="Bilder/in_warenkorb.jpg" height="50px"></div>
+		<label for="ort3" style="margin-right:150px;">Veranstaltungsort:</label></br>
+		<input type "text" id="ort3"  readonly></p></br>
+		<label for="zeit">Veranstaltungszeiten:</label></br>
+		<select name="Zeiten" id="zeit3" size="5" autocomplete="off" ></select>
+		<div class="zeichen" onclick="ausklappen('3');">&#9660 </div>		
+		<label id="infoL3" for="info">weitere Informationen:</label>
+		<textarea id="info3" rows="10" cols="58"readonly></textarea>
+	</div>
+	
+<!-- Button -->
+	<a href="FaecherAlternative.html"><button id="abbrechen">Abbrechen</button></a>
+
+<!-- Warenkorbübersicht zum manuellen Ein-/Ausblenden -->
+	<div  id="pfeil" style="position:fixed; font-size:25px; right:5px	;top:20%; cursor:pointer;" onclick="aus_einblenden();">
+	&#9664
+	</div>
+	<div id="warenkorbAlert">Warenkorbinhalt:
+		<div id="inhalt"></div>
+		<a href="Warenkorb.html"><button  id="warenkorb_link">Zum Warenkorb</button></a>		
+	</div>
+	
+</body>
+</html>
+	

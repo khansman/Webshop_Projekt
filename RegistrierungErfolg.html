@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html>
+<head>
+	<!-- Ränder am Browserrand entfernen -->
+	<style type="text/css">																																				
+		html,body{
+		margin: 0px;
+		padding: 0px;
+	</style>
+	<meta charset="utf-8">
+	<title>FinN - Registrierung</title>
+	<!-- Stylesheet -->
+	<link type="text/css" href="RegistrierungErfolgStyle.css" rel="stylesheet">
+	<!-- Einbinden des Scripts -->
+	<script src="Registrierung.js"></script>	
+	<!-- Schriftart hinzufügen -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 	
+</head>
+
+<!-- Beim Laden der Seite Gunktion (siehe Script) ausführen -->
+<body onload="zusammenfassung();">														
+	<header>		
+			<!-- Login-Bereich von Startseite, ohne Anmeldung -->
+			<div id="HeaderLogin">													
+				<div><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div>		
+				<!--<div id="titleT"><h1 id="title">Nachhilfe</h1></div>-->												
+			</div>
+	</header>
+	
+			<div id="erfolg">Registrierung erfolgreich!</div>							
+			<div id="login">Ihre Login-Daten:</div>
+			<div id="loginDaten">
+			<!-- Eingabefeld zum Anzeigen des Benutzernamens READONLY -->
+			<label for="benutzer">Benutzername: </label>
+			<input type="text" id="benutzer" readonly>									
+			</br>
+			<!-- Eingabefeld zum Anzeigen des Passworts READONLY -->
+			<label for="passwort">Passwort: </label>
+			<input type="password" id="passwort" readonly>
+			<!-- Augesymbol für das Umschalten von Passwort und Klartext -->
+			<div id="auge" onclick="passwortSicht('passwort');"><img src="Bilder/auge.jpg" height="20px"></div>	
+			</br>
+			<!-- Weiter-Button mit Funktion zum Schließen des Tabs -->
+			<input type="button" onclick="window.close();" id="bestaetigen" value="Weiter">					
+			</div>
+	</body>
+</html>

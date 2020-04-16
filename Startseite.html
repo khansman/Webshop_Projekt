@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html>
+<head>
+	<!--Eliminieren von Seitenrändern-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;}
+	</style>
+	<meta charset="utf-8" lang="de">
+	<title>Fin Nachhilfeportal</title>
+	<!--Stylesheet-->
+	<link href="startStyle.css" type="text/css" rel="stylesheet">	
+	<!-- Script -->
+   <script src="Startseite.js"></script>
+   <!-- Schriftart -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 	
+</head>	
+
+<!-- Abfrage ob schon eingeloggt -->
+<body onload="logInAbfrage();">
+	<header>	
+			<!--LogIn-Formular-->
+			<div id="HeaderLogin">	
+				<!--Fin-Bild-->
+				<div><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div>	
+				<!--Seitentitel-->
+				<!--<div id="titleT"><h1>Nachhilfe</h1></div>	-->
+				<!-- Warenkorb + Profilschriftzug wenn eingeloggt-->
+				<div id="warenkorb">
+					<a href="Warenkorb.html" ><img src="Bilder/warenkorb.jpg" height="40px" align="right" id="warenkorb_Bild"></a>
+					<a href="Profil.html" ><span id="profil">Mein Profil</span></a>	
+					<span id="warenNr">0/3</span>
+				</div>	
+				<!-- Anmeldebereich -->
+				<div id="anmelden">
+					<!--Textfeld: Benutzer-->
+					<input type="text" id="benutzer" size="20" placeholder="Benutzername" maxlength="6" required onkeydown="if (event.keyCode == 13)
+                        document.getElementById('loginB').click();">
+					<!--Textfeld: Passwort-->
+					<input type="password" id="passwort" size="20" placeholder="Passwort" required onkeydown=" if (event.keyCode == 13)
+                        document.getElementById('loginB').click();">			
+					<div id="login">
+						<!-- login-Button-->
+							<input type="button" id="loginB" value="LogIn" onclick="logIn();">	
+						<!--Registrationsschriftzug mit Link zur Registrierung -->
+						<a href="Registrierung.html" target="_blank"><span id="reg">Jetzt registrieren!</span></a>						
+					</div>
+				</div>
+			</div>
+	</header>
+	
+		<!-- sichtbarer Navigationsbereich -->
+	<div style="white-space:nowrap;">
+		<nav id="naviStart">															
+			<ul>
+				<li style="text-decoration:underline;">Home</li>
+				<!-- Studiengängschriftzug als Button mit Dreieck (#9660) daneben -->
+				<li><div onmouseover="menuEinblenden();" onmouseout="menuAusblenden();" class="inactive">Studiengänge <span id="dreieck">&#9660;</span></button></li>
+				<li><div class="inactive"><a href="Ueber_uns.html" >Über uns </a></div></li>
+				<li><div class="inactive"><a href="Impressum.html" >Impressum</a></div></li>
+			</ul>
+		</nav>
+	</div>	
+		<!-- ausklappbarer Navigationsbereich -->
+		<nav id="subNav" onmouseover="menuEinblenden();" onmouseout="menuAusblenden();">
+			<ul>
+				<li><div class="inactive" id="infL" onclick="sessionStorage.setItem('study','inf');"><a href="FaecherAlternative.html">Informatik</a></div></li>
+				<li><div class="inactive" id="wifL" onclick="sessionStorage.setItem('study','wif');"><a href="FaecherAlternative.html">Wirtschaftsinformatik</a></div></li>
+				<li><div class="inactive" id="ingInfL" onclick="sessionStorage.setItem('study','ingInf');"><a href="FaecherAlternative.html">Ingenieursinformatik</a></div></li>
+				<li><div class="inactive" id="cvL" onclick="sessionStorage.setItem('study','cv');"><a href="FaecherAlternative.html">Computervisualistik</a></div></li>
+			</ul>
+		</nav>	
+		<!-- eingeblendete Nachricht unten links, wenn login erfolgreich -->
+		<div id="logInAlert">LogIn erfolgreich!</div>
+		<div id="inhaltS">Na, Mathe 1 zum zweiten Mal verkackt?<p/>
+						Hör auf zu heulen, denn hier wird Dir geholfen!<p/>
+						Willkommen bei FinN – Dem Nachhilfeformat an der Fakultät für Informatik
+		</div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+/*-----------------------------------------------------------*/
+
+/* Headerbereich */
+header{
+	position:fixed;
+	/*Hintergrundfarbe*/
+	background-color: black;
+	/*Höhe*/
+	height:75px;
+	/*Breite*/
+	width:100%;
+	z-index:2;
+}
+
+/* Ausblenden von Textdekoration bei Links*/
+a:link, a:hover{
+	text-decoration:none;
+}
+
+/*--------------------------------------------------------------------------------*/
+
+
+/* JETZT-REGISTRIEREN Schriftzug*/
+#reg{
+	/* Schriftgröße*/
+	font-size:12px;
+	/* Schriftfarbe*/
+	color:white;
+	/* Textposition im übergeordneten Rahmen*/
+	text-align:center;
+	/* Schriftart*/
+	/*font-family:Cookie, cursive;*/
+	font-family: 'Raleway', sans-serif;
+}
+
+/* Hover über JETZT-REGISTRIEREN Schriftzug*/
+#reg:hover{
+	/* Unterstreichung*/
+	text-decoration:underline;
+	/* Farbe*/
+	color:white;
+
+	
+}
+
+/*Hover über Profil-Schriftzug und Warenkorb-Bild*/
+#profil:hover{
+	/* Definition Transition */
+	transition: transform .2s;
+	/*Unterstreichung*/
+	text-decoration:underline;
+	/* Farbe*/
+	color:white;
+	/*genauere Definition des Übergangs --> Skalierung*/
+    transform: scale(1.1);	
+}
+
+
+
+/*Allgemeiner LoginBereich*/
+#HeaderLogin{
+	height:70px;
+}
+
+/*Nachhilfe-Text*/
+#titleT{
+	/* Position*/
+	float:left;
+	/*Breite*/
+	width:calc(100% - 45% - 71px);
+	margin-left:3px;
+	/*Höhe des Schriftbereiches*/
+	line-height:15px;
+	color:white;
+	/*font-family:Cookie,cursive;*/
+	font-family: 'Raleway', sans-serif;
+	font-size:17px;
+}
+
+/*allgemeiner Anmeldebereich*/
+#anmelden{
+	float:right;
+	width:45%;
+	/*Abstand oben*/
+	margin-top:5px;
+}
+
+
+/* Benutzername-Textfeld*/
+#benutzer{
+	background-color:black;
+	border:2px solid white;
+	color:white;
+	margin-left:35%;
+	/*Zusammenschiebbar*/
+	box-sizing:border-box;
+	width:30%;
+}
+
+/*Passwort-Textfeld*/
+#passwort{
+	background-color:black;
+	border:2px solid white;
+	color:white;
+	/*Zusammenschiebbar*/
+	box-sizing:border-box;
+	width:30%;
+}
+
+
+/*loginButton + Registrierungsschriftzug*/
+#login{
+	margin-top:0.5em;
+	text-align:center;
+	margin-left:50px;
+}
+
+/*Login-Button*/
+#loginB{
+	box-sizing:border-box;
+	font-size:15px;
+	/*font-family:"Cookie", cursive;*/
+	font-family: 'Raleway', sans-serif;
+	background-color:black;
+	color:white;
+	border: 2px solid white;
+	height:30px;
+	width:25%;
+	min-width:60px;
+	cursor:pointer;
+	border-radius:50px;
+	margin-left:5%;
+
+}
+
+#loginB:hover{
+	background-color:#0070f0;
+	border:2px solid white;
+	color:white;
+}
+
+#warenkorb,#waren{
+	position:absolute; 
+	top:15px; 
+	right:15px;
+	color:white;
+	/*font-family:Cookie,cursive;*/
+	font-family: 'Raleway', sans-serif;
+}
+
+#warenNr{
+	font-size:2em;
+	margin-right:5px;
+	line-height: 45px;
+}
+
+
+#profil{
+	color:white;
+	font-size:1.5em;
+	display:inline-block;
+	margin-right:100px;
+}
+
+#titleT{
+	color:black;
+	font-family: 'Raleway', sans-serif;
+	font-size:2em;
+	text-align:center;
+	width:100%;
+	margin-top:4em;
+	text-decoration:underline;	
+}
+
+.container{
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
+	width:90%;
+	text-align:center;
+	border:1px solid black;
+	border-radius:30px;
+	display:none;
+	
+}
+
+.inputWare{
+	box-sizing:border-box;
+	font-size:12px;
+	height:30px;
+	width:190px;
+	margin-top:20px;
+	margin-right:10px;
+	margin-bottom:20px;
+	font-family:"Raleway",sans-serif;
+}
+
+#Menge0,#Menge1,#Menge2{
+	margin-left:10px; 
+	width:100px;
+	font-size:18px;
+	text-align:center;
+}
+
+#preis0,#preis1,#preis2{
+	margin-left:20px; 
+	width:60px; 
+	text-align:center; 
+	margin-right:50px;
+	border:none;
+	font-size:18px;
+}
+
+#loeschen{
+	margin-bottom:20px;
+	position:relative;
+	left:31%;
+}
+
+#loeschen:hover{
+	cursor:pointer;
+	transition: transform .2s;
+	transform: scale(1.2);
+}
+
+#gebuehr{
+	text-align:center;
+	font-size:20px;
+	line-height:80px;
+	font-family:"Raleway",sans-serif;
+}
+
+#summe{
+	margin-top:30px;
+	text-align:center;
+	width:100%;
+	height:40px;
+	font-size:20px;
+	font-family:"Raleway",sans-serif;
+}
+
+button{
+ color:black;
+ background-color:#2E9AFE;
+ border:2px solid black;
+ border-radius:50px; 
+ font-family:"Raleway",sans-serif;
+}
+
+button:hover{
+	color:white;
+	background-color:black;
+	cursor:pointer;
+}
+
+#buchen,#abbrechen{	
+	margin-top:20px;
+	margin-left:20px;
+	margin-bottom:50px;
+	width:200px;
+	height:30px;
+}
+
+#buttons{
+	width:100%;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	
+}
+

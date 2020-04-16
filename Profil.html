@@ -1,0 +1,110 @@
+<head>
+	<!--Seitenränder entfernen-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;
+	</style>
+	<meta charset="utf-8">
+	<title>FinN - Mein Profil</title>
+	<!-- Stylesheet -->
+	<link type="text/css" href="regStyle.css" rel="stylesheet">
+	<!-- Script -->
+	<script src="Profil.js"></script>
+	<!-- Schriftart -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+</head>
+
+<!-- Füllen der Textfelder beim Laden der Seite -->
+<body onload="profilFuellen();">
+	<header>
+			<!-- LoginFormular der Startseite ohne Anmeldung -->
+			<div id="HeaderLogin">
+				<!--Fin-Bild-->
+				<a href="Startseite.html" title="Zurück zur Startseite!" ><div><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div></a>
+				<!--Seitentitel-->
+				<!--<div id="titleT"><h1 id="title">Nachhilfe</h1></div>-->	
+				<!-- Bild zum Ausloggen -->
+				<a href="#" ><img src="Bilder/ausloggen.jpg" height="40px" align="right" id="logout_Bild" onclick="logout();"></a>
+			</div></a>
+	</header>
+	
+		<nav id="naviStart">															
+			<ul>
+				<li id="profil" style="text-decoration:underline;"><div onclick="profil_Orders();">Profil</div></li>
+				<li><div id="bestellungen" class="inactive" onclick="profil_Orders();">aktive Buchungen</div></li>
+			</ul>
+		</nav>
+	
+		<!-- Textfelder der Registrierung (vgl. Registrierung.html)-->
+		<div id="profilL">
+			<label for="name" class="labelreg">Vor- und Zuname</label>
+			<input type="text" id="name" name="Name" class="inputreg" required autocomplete="off" readonly>
+			<br/>
+			<label for="matrikel" class="labelreg">Matrikelnummer</label>
+			<input type="text" id="matrikel" name="Matrikelnummmer" class="inputreg" minlength="6" maxlength="6" required autocomplete="off" disabled>
+			<br/>
+			<label for="semester" class="labelreg">Fachsemester</label>
+			<input type="text" value="1" class="inputreg" id="semester" required autocomplete="off" readonly>
+			<br/> 
+			
+			<label for="study" class="labelreg">Studiengang</label>
+			<select name="Studiengang" id="study" size="4" style="box-sizing:border-box; width:300px;" onchange="newFaecherOptions();">
+				<option>Informatik</option>
+				<option>Wirtschaftsinformatik</option>
+				<option>Ingenieurinformatik</option>
+				<option>Computervisualistik</option>
+			</select>
+			</br>
+			<label for="email" class="labelreg">E-Mail-Adresse (optional)</label>
+			<input type="email" id="email" name="Email" class="inputreg" readonly>
+			<br/>
+			<label for="tele" class="labelreg">Telefonnummer (optional)</label>
+			<input type="tel" id="tele" name="Telefonnummer" class="inputreg" autocomplete="off" readonly>
+			<br/>
+			<label for="nachhilfe" class="labelreg" style="line-height:1.5em">Was willst du?</label>
+			<br/>
+			<div id="nh">
+				<input type="checkbox" id="sucher" name="Sucher" autocomplete="off" onclick="return false;">
+				<label for="sucher" class="nachhilfe">Nachhilfe bekommen!</label >
+				<br/>
+				<input type="checkbox" id="anbieter" name="Anbieter" autocomplete="off" onclick="return false;" onchange="showFaecher();">
+				<label for="anbieter" class="nachhilfe">Nachhilfe anbieten!</label>
+			</div>
+			<p/>
+			<label for="fach" id="fachL" class="labelreg" style="display:none;">Für welche Fächer möchtest du Nachhilfe anbieten?</label>
+			<select name="Faecher" id="fach" multiple size="8" style="box-sizing:border-box; width:300px; display:none;" autocomplete="off" disabled>
+			<optgroup label="Pflichtfächer">
+			<option>Mathematik 1</option>
+			<option>Mathematik 2</option>
+			<option>Einführung in die Informatik</option>
+			</optgroup>
+			<optgroup label="Wahlpflichtfächer">
+			<option>Bioinformatik</option>
+			<option>Data Mining - Einführung in Data Mining 2</option>
+			<option>Human-Learner-Interaction</option>
+			</optgroup>
+			</select>
+			</p>
+			<label for="zeitenProfil" id="zeitenProfilL" class="labelreg" style="display:none;">Zeiten</label>
+			<textarea id="zeitenProfil" rows="10" style="font-size:15px; width:300px;display:none;" disabled autocomplete="off"></textarea>
+			</p>
+			<label for="passwort" class="labelreg">Passwort</label>
+			<input type="password" id="passwort" placeholder="min. 6 Zeichen" name="Passwort" class="inputreg" minlength="6" autocomplete="off" required readonly>
+			<div id="auge3" onclick="passwortSicht('passwort');"><img src="Bilder/auge.jpg" height="20px"></div>
+			<br/>
+			<label for="info" class="labelreg">Ein paar Worte über dich (optional)</label>
+			<textarea name="Info" rows="10" id="info" cols="50" maxlength="1000" wrap="soft" autocomplete="off" readonly></textarea >
+			<!-- Buttons zum Bearbeiten und Löschen des Profils -->
+			<div id="regButtons">
+				<!-- Daten bearbeiten -->
+				<div class="start"><input  type="button" id="regButton" value="Daten bearbeiten" onclick="bearbeiten();"></div>
+				<!-- Daten löschen -->
+				<a class="start" href="#"><input type="button" id="löschen" value="Profil löschen" onclick="löschen();"></a>
+			<!-- Schriftzug, wenn Bearbeitung im Gange-->
+				<div id="bearbeitungsmodus">Bearbeitungsmodus</div>
+			</div>
+		</div>
+</body>
+</html>

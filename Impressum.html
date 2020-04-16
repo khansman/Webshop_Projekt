@@ -1,0 +1,127 @@
+<!doctype html>
+
+<html>
+<head>
+	<!--Eliminieren von Seitenrändern-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;
+	</style>
+	<meta charset="utf-8">
+	<title>Fin Nachhilfeportal</title>
+	<!-- Stylesheet -->
+	<link type="text/css" href="startStyle.css" rel="stylesheet">
+	<!-- Script -->
+	<script src="Startseite.js"></script>
+	<script src="Impressum.js"></script>
+	<!-- Schriftart -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+</head>
+
+<!-- beim Laden der Seite Abfrage, ob schon eingeloggt -->
+<body onload="logInAbfrage()">
+	<header>	
+			<!--LogIn-Formular-->
+			<div id="HeaderLogin">	
+				<!--Fin-Bild-->
+				<div><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div>	
+				<!--Seitentitel-->
+				<!--<div id="titleT"><h1 id="title">Nachhilfe</h1></div>-->	
+				<!-- Warenkorb + Profilschriftzug nach login -->
+				<div id="warenkorb">
+					<a href="Warenkorb.html" ><img src="Bilder/warenkorb.jpg" height="40px" align="right" id="warenkorb_Bild"></a>
+					<a href="Profil.html" ><span id="profil">Mein Profil</span></a>
+					<span id="warenNr">0/3</span>	
+				</div>	
+
+				<!-- Anmeldeformular -->
+				<div id="anmelden">
+					<!--Textfeld: Benutzer-->
+					<input type="text" id="benutzer" size="20" placeholder="Benutzername" maxlength="6" required onkeydown ="if (event.keyCode == 13)
+                        document.getElementById('loginB').click();">
+					<!--Textfeld: Passwort-->
+					<input type="password" id="passwort" size="20" placeholder="Passwort" required onkeydown ="if (event.keyCode == 13)
+                        document.getElementById('loginB').click();">			
+					<div id="login">
+						<!--Button: LogIn mit login-Funktion-->
+						<input type="button" id="loginB" value="LogIn" onclick="logIn();">		
+						<!--Registrationsschriftzug mit Link zur Registrierung-->
+						<a href="Registrierung.html" target="_blank"><span id="reg">Jetzt registrieren!</span></a>						
+					</div>
+				</div>
+			</div>
+	</header>
+	
+		<!-- sichtbarer Navigationsbereich-->
+	<div style="white-space:nowrap;">
+		<nav id="naviStart">																							
+			<ul>
+				<li><div class="inactive"><a href="Startseite.html">Home</a></div></li>
+				<!-- Studiengangschriftzug als Button mit Dreieck (#9660) daneben -->
+				<li><div onmouseover="menuEinblenden();" onmouseout="menuAusblenden();" class="inactive" >Studiengänge <span id="dreieck">&#9660;</span></div></li>
+				<li><div class="inactive"><a href="Ueber_uns.html" >Über uns</a></div></li>
+				<li style="text-decoration:underline;">Impressum</li>
+			</ul>
+		</nav>
+	</div>	
+		<!-- ausklappbarer Navigationsbereich -->
+		<nav id="subNav" onmouseover="menuEinblenden();" onmouseout="menuAusblenden();">
+			<ul>
+				<li><div class="inactive" id="infL" onclick="sessionStorage.setItem('study','inf');"><a href="FaecherAlternative.html">Informatik</a></div></li>
+				<li><div class="inactive" id="wifL" onclick="sessionStorage.setItem('study','wif');"><a href="FaecherAlternative.html">Wirtschaftsinformatik</a></div></li>
+				<li><div class="inactive" id="ingInfL" onclick="sessionStorage.setItem('study','ingInf');"><a href="FaecherAlternative.html">Ingenieursinformatik</a></div></li>
+				<li><div class="inactive" id="cvL" onclick="sessionStorage.setItem('study','cv');"><a href="FaecherAlternative.html">Computervisualistik</a></div></li>
+			</ul>
+		</nav>	
+		<div id="impressum">
+			<label id="impL" for="imp">Impressum</label></br>
+			<div id="imp">
+							Die Otto-von-Guericke-Universität Magdeburg ist eine Körperschaft des öffentlichen Rechts.</br>
+							Sie wird vertreten durch den Rektor: Prof. Dr.-Ing. Jens Strackeljan</br>
+							Universitätsplatz 2</br>
+							D-39106 Magdeburg</br>
+							Telefon: 49-(0)391-6701 (Telefonzentrale)</br>
+							Telefax: 49-(0)391-67-11157</br>
+							E-Mail: rektor@ovgu.de </p>
+							Zuständige Aufsichtsbehörde:</br>
+							Ministerium für Wirtschaft, Wissenschaft und Digitalisierung des Landes Sachsen-Anhalt</br>
+							Hasselbachstraße 4</br>
+							39104 Magdeburg</br>
+							E-Mail: poststelle@mw.sachsen-anhalt.de</p>
+							Umsatzsteueridentifikationsnummer: DE 139 238 413</p>
+							Die redaktionelle Verantwortlichkeit für diese Webseite liegt bei den Mitglieder bzw. Angehörigen der Nachhilfeorganisation FinN der Otto-von-Guericke-Universität Magdeburg. 
+							Für die Erstellung, Inhalte und Pflege von Webseiten, die im Zusammenhang mit einer beruflichen oder studentischen Tätigkeit an der OVGU entstehen, 
+							sind die jeweiligen Einrichtungen, Mitglieder bzw. Angehörigen der Nachhilfeorganisation FinN der Otto-von-Guericke-Universität Magdeburg selbst verantwortlich.
+			</div><p/>
+			<label id="disclaimerL"for="disclaimer" onclick="disclaimerShow();">Disclaimer</label></br>
+			<div id="disclaimer" style="display:none">
+							Die auf dieser Website enthaltenen Informationen sind mit größtmöglicher Sorgfalt erfolgt. 
+							Gleichwohl übernimmt die Otto-von-Guericke-Universität Magdeburg keine Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen.<p/>
+							Die Otto-von-Guericke-Universität Magdeburg bzw. die für die Erstellung dieser Website Verantwortlichen haften nicht für Schäden materieller oder immaterieller Art, 
+							die durch die Nutzung oder Nichtnutzung dieser Informationen oder durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, es sei denn, sie beruhen auf Vorsatz oder grober Fahrlässigkeit.<p/>
+							Alle Internetangebote sind freibleibend und unverbindlich. Die Otto-von-Guericke-Universität Magdeburg behält sich vor, Teile ihrer Webseiten oder das gesamte Internetangebot ohne vorherige Bekanntmachung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.<p/>
+			</div><p/>
+			<label id="linksL" for="links" onclick="linksShow();">Links</label></br>
+			<div id="links"style="display:none">
+							Soweit die Otto-von-Guericke-Universität Magdeburg direkt oder indirekt auf fremde Webseiten verweist („Hyperlinks“), ist sie für deren Inhalte nicht verantwortlich. Der Inhalt der verlinkten Webseiten liegt nicht im Verantwortungsbereich der Otto-von-Guericke-Universität Magdeburg, sondern ausschließlich bei den jeweiligen Betreibern. 
+							Zum Zeitpunkt der Verlinkung waren auf diesen Websites keine illegalen Inhalte erkennbar. Sollten der Otto-von-Guericke-Universität Magdeburg nach der Verlinkung illegale Inhalte bekannt werden, wird sie diese Verweise auf fremde Webseiten unverzüglich aus ihrem Informationsangebot entfernen.</p>
+							Die Otto-von-Guericke-Universität Magdeburg hat keinen Einfluss auf die Gestaltung, die Inhalte oder die Urheberschaft der verlinkten Seiten. 
+							Sie distanziert sich ausdrücklich von allen Inhalten der verlinkten Seiten, die nach der Verlinkung verändert wurden. Vorstehendes gilt für alle innerhalb des Internetangebotes der Otto-von-Guericke-Universität Magdeburg gesetzten Links und Verweise sowie für Fremdeinträge in vom jeweiligen Autor eingerichteten Gästebüchern, 
+							Diskussionsforen, Linkverzeichnissen, Mailinglisten und in allen anderen Formen von Datenbanken, auf deren Inhalt externe Schreibzugriffe möglich sind. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung derart dargebotener Informationen entstehen, haftet allein der Autor der Seite, auf welche verwiesen wurde.</p>
+			</div><p/>
+			<label id="urheberL" for="urheber" onclick="urheberShow();">Urheber- und Kennzeichenrecht</label></br>
+			<div id="urheber" style="display:none">
+							Die Otto-von-Guericke-Universität Magdeburg ist bestrebt, die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte (nachfolgend „Objekte“ genannt) zu beachten, von ihr selbst erstellte Objekte zu nutzen oder auf lizenzfreie Objekte zurückzugreifen.</p>
+							Alle auf dieser Webseite genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen den Regelungen des jeweils geltenden Kennzeichenrechts und den Besitzrechten der jeweils eingetragenen Eigentümer. Eine bloße Nennung der Marken- und Warenzeichen bedeutet nicht, dass diese nicht durch Rechte Dritter geschützt sind.</p>
+							Das Copyright für die auf dieser Webseite von der Otto-von-Guericke-Universität Magdeburg erstellten Objekte liegt bei der Otto-von-Guericke-Universität Magdeburg.</p>
+							Ohne Zustimmung der Otto-von-Guericke-Universität Magdeburg ist eine Vervielfältigung oder Verwendung solcher Objekte in anderen elektronischen oder gedruckten Publikationen nicht zulässig.</p>
+			</div><p/>
+			<a href="	Datenschutzerklärung.pdf" target="_blank" id="datenschutz"><span>Datenschutzerklärung</span></a>
+			</p>
+		</div>
+		<!-- eingeblendete Nachricht unten links, wenn login erfolgreich -->
+		<div id="logInAlert">LogIn erfolgreich!</div>
+</body>
+</html>

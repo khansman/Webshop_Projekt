@@ -1,0 +1,463 @@
+/*-----------------------------------------------------------*/
+
+/* Headerbereich */
+header{
+	position:fixed;
+	/*Hintergrundfarbe*/
+	background-color: black;
+	/*Höhe*/
+	height:75px;
+	/*Breite*/
+	width:100%;
+}
+
+/* allgemeiner Body */
+body{	
+	/* Hintergrundbild*/
+	background-image: url("Bilder/johannes.jpg");/*Hintergrundfarbe Body Schwarz*/
+	/* Größe HIntergrundbild*/
+	background-size:63%;
+	/* Hintergrundbild nur einmalig */
+	background-repeat:no-repeat;
+	/* Position des Hintergrundbilds*/
+	background-position:right bottom;
+	/* Soll sich beim Scrollen mitbewegen */
+	background-attachment:fixed;
+}
+
+/* Ausblenden von Textdekoration bei Links*/
+a:link, a:hover{
+	text-decoration:none;
+}
+
+/*--------------------------------------------------------------------------------*/
+
+
+/* JETZT-REGISTRIEREN Schriftzug*/
+#reg{
+	/* Schriftgröße*/
+	font-size:12px;
+	/* Schriftfarbe*/
+	color:white;
+	/* Textposition im übergeordneten Rahmen*/
+	text-align:center;
+	/* Schriftart*/
+	/*font-family:Cookie, cursive;*/
+	font-family: 'Raleway', sans-serif;
+}
+
+/* Hover über JETZT-REGISTRIEREN Schriftzug*/
+#reg:hover{
+	/* Unterstreichung*/
+	text-decoration:underline;
+	/* Farbe*/
+	color:white;
+
+	
+}
+
+/*Hover über Profil-Schriftzug und Warenkorb-Bild*/
+#profil:hover, #warenkorb_Bild:hover{
+	/* Definition Transition */
+	transition: transform .2s;
+	/*Unterstreichung*/
+	text-decoration:underline;
+	/* Farbe*/
+	color:white;
+	/*genauere Definition des Übergangs --> Skalierung*/
+    transform: scale(1.1);	
+}
+
+
+
+/*Allgemeiner LoginBereich*/
+#HeaderLogin{
+	height:70px;
+}
+
+/*Nachhilfe-Text*/
+#titleT{
+	/* Position*/
+	float:left;
+	/*Breite*/
+	width:calc(100% - 45% - 71px);
+	margin-left:3px;
+	/*Höhe des Schriftbereiches*/
+	line-height:15px;
+	color:white;
+	/*font-family:Cookie,cursive;*/
+	font-family: 'Raleway', sans-serif;
+	font-size:17px;
+}
+
+/*allgemeiner Anmeldebereich*/
+#anmelden{
+	float:right;
+	width:45%;
+	/*Abstand oben*/
+	margin-top:5px;
+}
+
+
+/* Benutzername-Textfeld*/
+#benutzer{
+	background-color:black;
+	border:2px solid white;
+	color:white;
+	margin-left:35%;
+	/*Zusammenschiebbar*/
+	box-sizing:border-box;
+	font-family:"Raleway",sans-serif;
+	width:30%;
+}
+
+/*Passwort-Textfeld*/
+#passwort{
+	background-color:black;
+	border:2px solid white;
+	color:white;
+	/*Zusammenschiebbar*/
+	box-sizing:border-box;
+	font-family:"Raleway",sans-serif;
+	width:30%;
+}
+
+
+/*loginButton + Registrierungsschriftzug*/
+#login{
+	margin-top:0.5em;
+	text-align:center;
+	margin-left:50px;
+}
+
+/*Login-Button*/
+#loginB{
+	box-sizing:border-box;
+	font-size:15px;
+	/*font-family:"Cookie", cursive;*/
+	font-family: 'Raleway', sans-serif;
+	background-color:black;
+	color:white;
+	border: 2px solid white;
+	height:30px;
+	width:25%;
+	min-width:60px;
+	cursor:pointer;
+	border-radius:50px;
+	margin-left:5%;
+
+}
+
+#loginB:hover{
+	background-color:#0070f0;
+	border:2px solid white;
+	color:white;
+}
+
+#warenkorb,#waren{
+	display:none;
+	position:absolute; 
+	top:15px; 
+	right:15px;
+	color:white;
+	/*font-family:Cookie,cursive;*/
+	font-family: 'Raleway', sans-serif;
+}
+
+#warenNr{
+	font-size:2em;
+	margin-right:5px;
+	line-height: 45px;
+}
+
+
+#profil{
+	color:white;
+	font-size:1.5em;
+	display:inline-block;
+	margin-right:100px;
+}
+
+
+
+/*--------------------------------------------------------------*/
+
+/*ÜBERGEORDNETES MENÜ*/
+
+/*allgmein*/
+#naviStart{
+	position:fixed;
+	list-style-type:none;
+	text-align: center;	
+	top:75px;
+	width:100%;
+	background-color:transparent;
+	border-bottom:2px solid black;
+}
+
+
+/*Listenelemente*/
+#naviStart ul li{
+	width:17%;
+	display: inline-block;  
+	font-size: 1.5em;		
+	/*font-family: "Cookie", cursive;	*/
+	font-family: 'Raleway', sans-serif;
+	margin:0 auto;
+	margin-bottom:0.2em;
+}
+
+/*Links und Listenelemente*/
+#naviStart li a, #naviStart li{
+	text-decoration:none; 
+	color: black;
+	/*Schatten um Text*/
+	text-shadow:1px 1px 1px #0070f0;
+	
+}
+
+/*Hover Listenelemente*/
+#naviStart li a:hover,#studyB:hover{
+	/*kein Hintergrund*/
+	background-color:transparent;
+	/*Hand als Cursor*/
+	cursor:pointer;
+
+}
+
+/*Listenelemente, die nicht ausgewählt wurden*/
+.inactive{
+	transition: transform .2s;
+}
+
+/*Hover über inaktiven Listenelementen*/
+.inactive:hover{
+	/*Skalieren*/
+	text-decoration:underline;
+    transform: scale(1.1);
+	cursor:pointer;
+}
+
+
+
+/*-------------------------------------------------------------------*/
+
+/*UNTERMENÜ*/
+/*--> Orientierung am übergeordneten Menü*/
+
+#subNav{
+	position:fixed;
+	top:145px;
+	list-style-type:none;
+	text-align: center;						
+	border-bottom:1px solid black;
+	/*ausgeblendet*/
+	display:none;
+	width:900px;
+	/*Position in der Mitte des Bildschirms*/
+	left:50%;
+	margin-left:-500px;
+	/*Animation zum Einblenden und Ausblenden*/
+	/*-moz-animation: fadein 0.5s, fadeout 1s 5s;*/ /* Firefox */
+    /*-webkit-animation: fadein 1s, fadeout 1s 5s;*/ /* Safari and Chrome */
+    /*-o-animation: fadein 1s, fadeout 1s 5s;*/ /* Opera */
+}
+
+
+#subNav ul li{
+	width:19.5%;
+	display: inline-block; 
+	font-size: 1em;		
+	/*font-family: "Cookie", cursive;	*/
+	font-family: 'Raleway', sans-serif;
+	margin-bottom:0.1em;
+}
+
+
+
+
+#subNav ul li a, #subNav ul li{
+	text-decoration:none;
+	color: #000;			
+	text-shadow:1px 1px 1px #0070f0;
+}
+
+#subNav ul li a:hover{
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+#dreieck{
+	font-size:20px;
+	color:black;
+}
+
+/*-----------------------------------------------*/
+
+/*Inhalt*/
+#inhaltS,#inhaltU{
+	position:absolute;
+	left:100px;
+	/*font-family:Cookie,cursive;*/
+	font-family: 'Raleway', sans-serif;
+	width:50%;
+}
+
+#inhaltS{
+	top:40%;
+	font-size:30px;
+}
+
+#inhaltU{
+	overflow:auto;
+	top:270px;
+	left:50px;
+	bottom:40px;
+	font-size:20px;
+	padding:20px;
+	border:2px solid black;
+	border-radius:10px;
+	box-shadow: 3px 3px 3px 3px lightgray;
+}
+
+/*Nachricht beim erfolgreichen Login*/	
+#logInAlert{
+	position: fixed;  
+	left: 2%;
+	top: 80%;
+	width: 15%;
+	height:500px;	
+	background-color: white; 
+	/*ausgeblendet*/
+	z-index:999;
+	display: none;
+	border:2px solid black;
+	text-align:center;
+	line-height:80px;
+	font-size:25px;
+	/*font-family:'Cookie',cursive;*/
+	font-family: 'Raleway', sans-serif;
+	border-radius:30px;
+	/*Reinschieben, Rausschieben*/
+	animation: slideInUp 0.5s, slideInDown 0.5s 2.5s;
+}
+
+#linksL:hover,#urheberL:hover,#disclaimerL:hover,#impressum span:hover{
+	cursor:pointer;
+	text-decoration:underline;
+}
+
+#impressum label,#impressum span{
+	line-height:60px;
+	font-size:22px;
+	/*font-family:Cookie,cursive;*/
+	font-family: 'Raleway', sans-serif;
+}
+
+#impressum div{
+	font-family: 'Raleway', sans-serif;
+	font-size:15px;
+}
+
+#impressum{
+	overflow:auto;
+	position:absolute;
+	top:270px;
+	bottom:40px;
+	padding-left:20px;
+	padding-right:70px;
+	text-align:center;
+	left:50px; 
+	width:50%;
+	border:2px solid black;
+	border-radius:10px;
+}
+
+#disclaimer,#links,#urheber{
+	text-align:justify;
+}
+
+#imp{
+	text-align:center;
+}
+
+#datenschutz{
+	color:black;
+}
+
+
+/*-------------------------------------------------------------------*/
+
+/*Animationen*/
+
+/*Nachricht einschieben*/
+@keyframes slideInUp{
+	0% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+  }
+  
+/*Nachricht rausschieben*/
+@keyframes slideInDown {
+  0% {
+	opacity:1;
+	transform: translateY(0);
+  }
+  100% {
+	transform: translateY(100%);
+  }
+}
+
+.animationStart{
+	animation:fadein 0.5s;
+}
+
+.animationEnd{
+	animation: fadeout 0.5s;
+}
+
+/*Untermenü-Einblenden*/
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+/* Untermenü-Ausblenden*/
+@keyframes fadeout {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+
+/* Scrollbar-Design Chrome/Safari*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 1px 0 6px rgba(0,0,0,0.5); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+
+
+	
+	
+
+
+

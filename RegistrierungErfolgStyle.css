@@ -1,0 +1,107 @@
+header{
+	background-color: black;
+	height:85px;
+	width:100%;
+	border-bottom:5px solid black;
+}
+
+#HeaderLogin{
+	height:70px;
+}
+
+
+
+#titleT{
+	margin-bottom:2em;
+	margin-top:0.5em;
+	min-height:70px;
+	height:70px;
+	
+}
+
+
+
+
+#titleT{
+	float:left;
+	width:calc(100% - 45% - 71px);
+	line-height:20px;
+}
+
+#title{
+	color:white;
+	font-size:2.75em;
+	font-family: "Cookie",cursive;
+}
+
+#erfolg{
+	font-family: Cookie, cursive;
+	font-size:250%;
+	margin-top:2.5%;
+	text-decoration:underline;
+	text-align:center;
+}
+
+#login{
+	font-family: Cookie, cursive;
+	margin-top:50px;
+	font-size:170%;
+	text-align:center;
+}
+
+#benutzer,#passwort{
+	margin-left:50px;
+	margin-top:10px;
+	border:none;
+	color:black;
+}
+
+#passwort{
+	position:relative;
+	left:35px;
+	width:150px;
+}
+
+#loginDaten{
+	margin-left:60px;
+	text-align:center;
+	margin-top:50px;
+	font-family: Cookie, cursive;
+	font-size:150%;
+}
+
+#auge{
+	position:relative;
+	display:inline;
+	left:40px;
+	top:5px;
+	transition: transform .2s;
+}
+
+#auge:hover{
+	cursor:pointer;
+
+}
+
+#bestaetigen{
+	position:fixed;
+	font-family: Cookie, cursive;
+	margin-top:50px;
+	font-size:20px;
+	text-align:center;
+	width:100px;
+	height:30px;
+	background-color:white;
+	border:2px solid black;
+	border-radius:50px;
+	margin-left:-60px;
+	margin-top:100px;
+	transition: transform .2s;
+}
+
+#bestaetigen:hover{
+	cursor:pointer;
+	color:white;
+	background-color:black;
+	transform: scale(1.1); 
+}

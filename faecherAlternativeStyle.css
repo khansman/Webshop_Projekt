@@ -1,0 +1,555 @@
+ header{
+	 z-index:999;
+	position:fixed;
+	/*Hintergrundfarbe*/
+	background-color: black;
+	/*Höhe*/
+	height:75px;
+	/*Breite*/
+	width:100%;
+}
+
+/* allgemeiner Body */
+body{	
+	/* Hintergrundbild*/
+	background-image: url("johannes.jpg");/*Hintergrundfarbe Body Schwarz*/
+	/* Größe HIntergrundbild*/
+	background-size:63%;
+	/* Hintergrundbild nur einmalig */
+	background-repeat:no-repeat;
+	/* Position des Hintergrundbilds*/
+	background-position:right bottom;
+	/* Soll sich beim Scrollen mitbewegen */
+	background-attachment:fixed;
+}
+
+/* Ausblenden von Textdekoration bei Links*/
+a:link, a:hover{
+	text-decoration:none;
+}
+
+
+/* JETZT-REGISTRIEREN Schriftzug*/
+#reg{
+	/* Schriftgröße*/
+	font-size:12px;
+	/* Schriftfarbe*/
+	color:white;
+	/* Textposition im übergeordneten Rahmen*/
+	text-align:center;
+	/* Schriftart*/
+	/*font-family:Cookie, cursive;*/
+	font-family: 'Raleway', sans-serif;
+}
+
+/* Hover über JETZT-REGISTRIEREN Schriftzug*/
+#reg:hover{
+	/* Unterstreichung*/
+	text-decoration:underline;
+	/* Farbe*/
+	color:white;
+
+	
+}
+
+/*Hover über Profil-Schriftzug und Warenkorb-Bild*/
+#profil:hover, #warenkorb_Bild:hover{
+	/* Definition Transition */
+	transition: transform .2s;
+	/*Unterstreichung*/
+	text-decoration:underline;
+	/* Farbe*/
+	color:white;
+	/*genauere Definition des Übergangs --> Skalierung*/
+    transform: scale(1.1);	
+}
+
+
+
+/*Allgemeiner LoginBereich*/
+#HeaderLogin{
+	height:70px;
+}
+
+/*Nachhilfe-Text*/
+#titleT{
+	/* Position*/
+	float:left;
+	/*Breite*/
+	width:calc(100% - 45% - 71px);
+	margin-left:3px;
+	/*Höhe des Schriftbereiches*/
+	line-height:15px;
+	color:white;
+	/*font-family:Cookie,cursive;*/
+	font-family: 'Raleway', sans-serif;
+	font-size:17px;
+}
+
+/*allgemeiner Anmeldebereich*/
+#anmelden{
+	float:right;
+	width:45%;
+	/*Abstand oben*/
+	margin-top:5px;
+}
+
+
+/* Benutzername-Textfeld*/
+#benutzer{
+	background-color:black;
+	border:2px solid white;
+	color:white;
+	margin-left:35%;
+	/*Zusammenschiebbar*/
+	box-sizing:border-box;
+	font-family:"Raleway",sans-serif;
+	width:30%;
+}
+
+/*Passwort-Textfeld*/
+#passwort{
+	background-color:black;
+	border:2px solid white;
+	color:white;
+	/*Zusammenschiebbar*/
+	box-sizing:border-box;
+	font-family:"Raleway",sans-serif;
+	width:30%;
+}
+
+
+/*loginButton + Registrierungsschriftzug*/
+#login{
+	margin-top:0.5em;
+	text-align:center;
+	margin-left:50px;
+}
+
+/*Login-Button*/
+#loginB{
+	box-sizing:border-box;
+	font-size:15px;
+	/*font-family:"Cookie", cursive;*/
+	font-family: 'Raleway', sans-serif;
+	background-color:black;
+	color:white;
+	border: 2px solid white;
+	height:30px;
+	width:25%;
+	min-width:60px;
+	cursor:pointer;
+	border-radius:50px;
+	margin-left:5%;
+
+}
+
+#loginB:hover{
+	background-color:#0070f0;
+	border:2px solid white;
+	color:white;
+}
+
+#warenkorb,#waren{
+	display:none;
+	position:absolute; 
+	top:15px; 
+	right:15px;
+	color:white;
+	/*font-family:Cookie,cursive;*/
+	font-family: 'Raleway', sans-serif;
+}
+
+#warenNr{
+	font-size:2em;
+	margin-right:5px;
+	line-height: 45px;
+}
+
+
+#profil{
+	color:white;
+	font-size:1.5em;
+	display:inline-block;
+	margin-right:100px;
+}
+
+
+
+/*--------------------------------------------------------------*/
+
+/*ÜBERGEORDNETES MENÜ*/
+
+/*allgmein*/
+#naviStart{
+	z-index:999;
+	position:fixed;
+	list-style-type:none;
+	text-align: center;	
+	top:75px;
+	width:100%;
+	background-color:transparent;
+	border-bottom:2px solid black;
+}
+
+
+/*Listenelemente*/
+#naviStart ul li{
+	width:17%;
+	display: inline-block;  
+	font-size: 1.5em;		
+	/*font-family: "Cookie", cursive;	*/
+	font-family: 'Raleway', sans-serif;
+	margin:0 auto;
+	margin-bottom:0.2em;
+}
+
+/*Links und Listenelemente*/
+#naviStart li a, #naviStart li{
+	text-decoration:none; 
+	color: black;
+	/*Schatten um Text*/
+	text-shadow:1px 1px 1px #0070f0;
+	
+}
+
+/*Hover Listenelemente*/
+#naviStart li a:hover,#studyB:hover{
+	/*kein Hintergrund*/
+	background-color:transparent;
+	text-decoration:underline;
+	/*Hand als Cursor*/
+	cursor:pointer;
+
+}
+
+/*Listenelemente, die nicht ausgewählt wurden*/
+.inactive{
+	transition: transform .2s;
+}
+
+/*Hover über inaktiven Listenelementen*/
+.inactive:hover{
+	/*Skalieren*/
+    transform: scale(1.1);
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+/*Studiengänge-Listenelement*/
+#studyB{
+	height:40px;
+	width:200px;
+	font-size:1em;
+	/*font-family:Cookie,cursive;*/
+	font-family: 'Raleway', sans-serif;
+	background-color:white;
+	text-decoration:none;  
+	color: #000;			
+	text-shadow:1px 1px 1px #0070f0;
+	/*kein Rahmen*/
+	border:none;
+}
+
+
+/*-------------------------------------------------------------------*/
+
+/*UNTERMENÜ*/
+/*--> Orientierung am übergeordneten Menü*/
+
+#subNav{
+	background-color:white;
+	z-index:999;
+	position:fixed;
+	top:145px;
+	list-style-type:none;
+	text-align: center;						
+	border-bottom:1px solid black;
+	/*ausgeblendet*/
+	width:900px;
+	/*Position in der Mitte des Bildschirms*/
+	left:50%;
+	margin-left:-500px;
+	/*Animation zum Einblenden und Ausblenden*/
+	-moz-animation: fadein 0.5s, fadeout 1s 5s; /* Firefox */
+    -webkit-animation: fadein 1s, fadeout 1s 5s; /* Safari and Chrome */
+    -o-animation: fadein 1s, fadeout 1s 5s; /* Opera */
+}
+
+
+#subNav ul li{
+	width:19.5%;
+	display: inline-block; 
+	font-size: 1em;		
+	/*font-family: "Cookie", cursive;	*/
+	font-family: 'Raleway', sans-serif;
+	margin-bottom:0.1em;
+}
+
+
+
+
+#subNav ul li a, #subNav ul li{
+	text-decoration:none;
+	color: #000;			
+	text-shadow:1px 1px 1px #0070f0;
+}
+
+#subNav ul li a:hover{
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+#dreieck{
+	font-size:20px;
+	color:black;
+}
+
+.studiengang{
+	position:absolute;
+	display:block;
+	left:50px;
+	top:250px;
+	height:400px;
+	-ms-user-select: None;
+	-moz-user-select: None;
+	-webkit-user-select: None;
+	z-index:1;
+}
+
+.faecher,.faecherW{
+	background-color:darkblue; 
+	position:absolute; 
+	opacity:0.3; 
+	z-index:999;
+	border:2px solid darkblue;
+}
+
+
+.faecher:hover,.faecherW:hover{
+	background-color:yellow;
+	cursor:pointer;
+}
+
+#wahlpflichtinf{
+	width:400px;
+	display:none;
+	position:absolute;
+	top:290px;
+	color:white;
+	background-color:black;
+	border:2px solid black;
+	line-height:25px;
+	padding-right:20px;
+	left:905px;
+	white-space:nowrap;
+	overflow:hidden;
+	font-family:"Raleway", sans-serif;
+	z-index:999;
+}
+
+#wahlpflichtcv{
+	width:400px;
+	display:none;
+	position:absolute;
+	top:330px;
+	color:white;
+	background-color:black;
+	border:2px solid black;
+	line-height:25px;
+	padding-right:20px;
+	left:873px;
+	white-space:nowrap;
+	overflow:hidden;
+	font-family:"Raleway", sans-serif;
+	z-index:999;
+}
+
+#wahlpflichtwif{
+	width:400px;
+	display:none;
+	position:absolute;
+	top:370px;
+	color:white;
+	background-color:black;
+	border:2px solid black;
+	line-height:25px;
+	padding-right:20px;
+	left:862px;
+	white-space:nowrap;
+	overflow:hidden;
+	font-family:"Raleway", sans-serif;
+	z-index:999;
+}
+
+#wahlpflichtinginf{
+	width:400px;
+	display:none;
+	position:absolute;
+	top:335px;
+	color:white;
+	background-color:black;
+	border:2px solid black;
+	line-height:25px;
+	padding-right:20px;
+	left:953px;
+	white-space:nowrap;
+	overflow:hidden;
+	font-family:"Raleway", sans-serif;
+	z-index:999;
+}
+
+#inf{
+	display:none;
+}
+
+#cv{
+	display:none;
+}
+
+#inginf{
+	display:block;
+}
+
+#wif{
+	display:none;
+}
+
+.animationEnd{
+	animation-name: decrease;
+	animation-duration:0.5s;
+}
+
+.animationStart{
+	animation-name: increase;
+	animation-duration:0.5s;
+}
+
+.disabled{
+	background-color:red; 
+	position:absolute; 
+	opacity:0.3; 
+	z-index:999;
+	border:2px solid black;
+}
+
+.disabled:hover{
+	background:gray;
+	cursor:not-allowed;
+}
+#logInAlert{
+	position: fixed;  
+	left: 2%;
+	top: 80%;
+	width: 15%;
+	height:500px;	
+	background-color: white; 
+	/*ausgeblendet*/
+	z-index:999;
+	display: none;
+	border:2px solid black;
+	text-align:center;
+	line-height:80px;
+	font-size:25px;
+	/*font-family:'Cookie',cursive;*/
+	font-family: 'Raleway', sans-serif;
+	border-radius:5%;
+	/*Reinschieben, Rausschieben*/
+	animation: slideInUp 0.5s, slideInDown 0.5s 2.5s;
+}
+
+@keyframes slideInUp{
+	0% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+  }
+  
+/*Nachricht rausschieben*/
+@keyframes slideInDown {
+  0% {
+	opacity:1;
+	transform: translateY(0);
+  }
+  100% {
+	transform: translateY(100%);
+  }
+}
+	
+	
+
+@keyframes increase{
+	0%{
+		width:0;
+	}
+	100%{
+		width:400px;
+	}
+}
+
+@keyframes decrease{
+	0%{
+		width:400px;
+	}
+	100%{
+		width:0;
+	}
+}
+
+#wahlpflichtinf ul li a{
+	color:white;
+}
+
+#wahlpflichtinf ul li a:hover{
+	text-decoration:underline;
+}
+
+#wahlpflichtcv ul li a{
+	color:white;
+}
+
+#wahlpflichtcv ul li a:hover{
+	text-decoration:underline;
+}
+
+#wahlpflichtwif ul li a{
+	color:white;
+}
+
+#wahlpflichtwif ul li a:hover{
+	text-decoration:underline;
+}
+
+#wahlpflichtinginf ul li a{
+	color:white;
+}
+
+#wahlpflichtinginf ul li a:hover{
+	text-decoration:underline;
+}
+
+#loginWarning{
+	z-index:999;
+	border:2px solid black;
+	position:fixed;
+	display:none;
+	color:red;
+	right:25px;
+	bottom:-20px;
+	width:350px;
+	height:150px;
+	padding-top:20px;
+	text-align:center;
+	border-radius:30px;
+	font-size:20px;
+	background-color:white;
+	font-family:"Raleway",sans-serif;
+	animation: pulsate 2s ease-out infinite;
+}
+
+@keyframes pulsate {
+	0%   { border-color: rgba(255, 0, 0, 1); }
+    50%  { border-color: rgba(255, 0, 0, 0); }
+    100% { border-color: rgba(255, 0, 0, 1); }

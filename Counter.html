@@ -1,0 +1,56 @@
+  <!doctype html>
+
+<html>
+<head>
+	<!--Eliminieren von Seitenrändern-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;}
+	</style>
+	<meta charset="utf-8" lang="de">
+	<title>FUN</title>
+	<!--Stylesheet-->
+	<link href="counterStyle.css" type="text/css" rel="stylesheet">	
+	<!-- Script -->
+   <!-- Schriftart -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>	
+
+<body onload="startCountdown();">
+ <p id="title">Bezahlvorgang abgeschlossen in:</p>
+ <p id="countdown"></p>
+ 
+ 
+ <script type="text/javascript"> 
+ var counter = 5; 
+ 
+ <!-- Countdown-Iteration -->
+ function countdown() { 
+	if (--counter > 0) { 
+		audio();
+		document.getElementById("countdown").innerHTML = counter; 
+		window.setTimeout(countdown, 1000); 
+		} 
+	else { 
+		window.location.href="Credits.html";
+	} 
+ } 
+ 
+ <!-- Countdown starten -->
+ function startCountdown() {
+ audio();
+ document.getElementById("countdown").innerHTML = counter; 
+ window.setTimeout(countdown, 1000); 
+ } 
+ 
+ <!-- Musik -->
+ function audio(){
+ var audio = new Audio('Bilder/timer.mp3');
+audio.play()
+ }
+ </script>
+ 
+</body>
+</html>

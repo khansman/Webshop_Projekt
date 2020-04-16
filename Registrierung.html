@@ -1,0 +1,163 @@
+<!doctype html>
+
+<html>
+<head>
+	<!--Eliminieren von Seitenrändern-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;
+	</style>
+	<meta charset="utf-8">
+	<title>FinN - Registrierung</title>
+	<!-- Stylesheet -->
+	<link type="text/css" href="regStyle.css" rel="stylesheet">
+	<!-- Script -->
+	<script src="Registrierung.js"></script>
+	<!-- Schriftart -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+</head>
+
+<body>
+
+	<header>	
+			<!-- Login-Bereich von Startseite ohne Anmeldung -->
+			<div id="HeaderLogin">
+				<!--Fin-Bild-->
+				<div><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div>	
+				<!--Seitentitel-->
+				<!--<div id="titleT"><h1 id="title">Nachhilfe</h1></div>	-->												
+			</div></a>
+	</header>
+	
+	<!-- Registrierungsformular -->
+	<div id="regText"><b>Registrierung</b></div>
+	<div id="pflicht">Die mit &nbsp * &nbsp  markierten Felder sind für die Registrierung notwendig <br/> und werden mit der URZ-Datenbank abgeglichen!"</div>
+	
+		<div id="registrierung">
+			<!-- Name NOTWENDIG ohne automatische Einsetzung -->
+			<label for="name" class="labelreg">Vor- und Zuname*</label>
+			<input type="text" id="name" name="Name" class="inputreg" required autocomplete="off">
+			<br/>
+			<!-- Matrikelnummer NOTWENDIG ohne automatische Einsetzung, genau 6 Zeichen -->
+			<label for="matrikel" class="labelreg">Matrikelnummer* </label>
+			<input type="text" id="matrikel" name="Matrikelnummmer" class="inputreg" minlength="6" maxlength="6" required autocomplete="off" onkeyup="zahl();">
+			<br/>
+			<!-- Semesteranzahl NOTWENDIG ohne automatische Einsetzung, zwischen 1 und 10 (variabel) -->
+			<label for="semester" class="labelreg">Fachsemester* </label>
+			<input type="number" min="1" max="10" value="5" class="inputreg" id="semester" required autocomplete="off">
+			<br/> 
+			<!-- Studiengang NOTWENDIG ohne automatische Einsetzung, vier Möglichkeiten, Informatik als Vorauswahl -->
+			<label for="study" class="labelreg">Studiengang*</label>
+			<select name="Studiengang" id="study" size="4" style="box-sizing:border-box; width:300px;" onchange="newFaecherOptions();">
+				<option selected>Informatik</option>
+				<option>Wirtschaftsinformatik</option>
+				<option>Ingenieurinformatik</option>
+				<option>Computervisualistik</option>
+			</select>
+			</br>
+			<!-- Eamail OPTIONAL -->
+			<label for="email" class="labelreg">E-Mail-Adresse (optional)</label>
+			<input type="email" id="email" name="Email" class="inputreg">
+			<br/>
+			<!-- Telefonnummer OPTIONAL -->
+			<label for="tele" class="labelreg">Telefonnummer (optional)</label>
+			<input type="tel" id="tele" name="Telefonnummer" class="inputreg" placeholder="+49 ..." autocomplete="off">
+			<br/>
+			<!-- Auswahl, was man will / NOTWENDIG -->
+			<label for="nachhilfe" class="labelreg" style="line-height:1.5em">Was willst du?*</label>
+			<br/>
+			<div id="nh">
+				<!-- Nachhilfe beziehen -->
+				<input type="checkbox" id="sucher" name="Sucher" autocomplete="off">
+				<label for="sucher" class="nachhilfe">Nachhilfe bekommen!</label >
+				<br/>
+				<!-- Nachhilfe anbieten -->
+				<input type="checkbox" id="anbieter" name="Anbieter" autocomplete="off" onchange="showFaecher();">
+				<label for="anbieter" class="nachhilfe">Nachhilfe anbieten!</label>
+			</div>
+			<p/>
+			<label for="fach" id="fachL" class="labelreg" style="display:none;">Für welche Fächer möchtest du Nachhilfe anbieten?</label>
+			<select name="Faecher" id="fach" multiple size="8" style="box-sizing:border-box; width:300px; display:none;" autocomplete="off">
+			<optgroup label="Pflichtfächer">
+			<option>Mathematik 1</option>
+			<option>Mathematik 2</option>
+			<option>Einführung in die Informatik</option>
+			</optgroup>
+			<optgroup label="Wahlpflichtfächer">
+			<option>Bioinformatik</option>
+			<option>Data Mining - Einführung in Data Mining 2</option>
+			<option>Human-Learner-Interaction</option>
+			</optgroup>
+			</select>
+			</p>
+			<label for="zeiten" id="zeitenL" class="labelreg" style="display:none">Zeitrahmen (Startzeiten pro 1,5h Block)</label>
+			<table id="zeiten">
+				<tr>
+					<td>
+						<input type="checkbox" id="Montag"class=" wochentage" onchange="zeitenDisplay('Montag');" autocomplete="off">
+						<label for="montag" >Montag</label>	
+					</td>
+					<td>
+						<input type="checkbox" id="Dienstag"class="wochentage" onchange="zeitenDisplay('Dienstag');" autocomplete="off">
+						<label for="dienstag" >Dienstag</label>	
+					</td>
+					<td>
+						<input type="checkbox" id="Mittwoch"class="wochentage" onchange="zeitenDisplay('Mittwoch');" autocomplete="off">
+						<label for="mittwoch" >Mittwoch</label>	
+					</td>
+					<td>
+						<input type="checkbox" id="Donnerstag" class="wochentage" onchange="zeitenDisplay('Donnerstag');" autocomplete="off">
+						<label for="donnerstag" >Donnerstag</label>
+					</td>
+					<td>
+						<input type="checkbox" id="Freitag" class="wochentage" onchange="zeitenDisplay('Freitag');"autocomplete="off">
+						<label for="freitag" >Freitag</label>	
+					</td>
+				</tr>
+				<tr>
+					<td><input type="text" id="Montag1" style="display:none;" placeholder="h:min" autocomplete="off"></td>
+					<td><input type="text" id="Dienstag1" style="display:none;" placeholder="h:min" autocomplete="off"></td>
+					<td><input type="text" id="Mittwoch1" style="display:none;" placeholder="h:min" autocomplete="off"></td>
+					<td><input type="text" id="Donnerstag1" style="display:none;" placeholder="h:min" autocomplete="off"></td>
+					<td><input type="text" id="Freitag1" style="display:none;" placeholder="h:min" autocomplete="off"></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="Montag2" style="display:none;" placeholder="h:min" autocomplete="off"></td>
+					<td><input type="text" id="Dienstag2" style="display:none;" placeholder="h:min" autocomplete="off"></td>
+					<td><input type="text" id="Mittwoch2" style="display:none;" placeholder="h:min" autocomplete="off"></td>
+					<td><input type="text" id="Donnerstag2" style="display:none;" placeholder="h:min" autocomplete="off"></td>
+					<td><input type="text" id="Freitag2" style="display:none" placeholder="h:min" autocomplete="off"></td>
+				</tr>
+			</table>
+			</p>
+			<!-- Passwort NOTWENDIG ohne automatische Einsetzung, mindestens 6 Zeichen + Auge zum Umschalten Passwort/Klartext-->
+			<label for="passwort" class="labelreg">Passwort*</label>
+			<input type="password" id="passwort" placeholder="min. 6 Zeichen" name="Passwort" class="inputreg" minlength="6" autocomplete="off" required>
+			<div id="auge1" onclick="passwortSicht('passwort');"><img src="Bilder/auge.jpg" height="20px"></div>
+			<br/>
+			<!-- Passwortbestätigung NOTWENDIG ohne automatische Einsetzung + Auge zum Umschalten Passwort/Klartext-->
+			<label for="passwortB" class="labelreg">Passwort bestätigen*</label>
+			<input type="password" id="passwortB" name="PasswortB" class="inputreg" autocomplete="off" required>
+			<div id="auge2" onclick="passwortSicht('passwortB');"><img src="Bilder/auge.jpg" height="20px"></div>
+			<br/>
+			<!-- Name OPTIONAL-->
+			<label for="info" class="labelreg">Ein paar Worte über dich (optional):</label>
+			<textarea name="Info" rows="10" id="info" cols="50" maxlength="1000" wrap="soft" autocomplete="off"></textarea>
+			<!-- Button zum Registrieren oder Abbrechen-->
+			<div id="regButtons">
+				<!-- Registrierungsbutton mit Datenauslesen beim Klicken -->
+				<div class="start"><input  type="button" id="regButton" value="Registrieren!" onclick="auslesen();" ></div>
+				<!-- Abbrechen-Button mit Schließen des Tabs-->
+				<a class="start" onclick="window.close();"><input type="button" id="cancel" value="Abbrechen"></a>
+			</div>
+			<!-- Datenschutzerklärung und AGBs -->
+			<div id="erklärung">Mit der Anmeldung erklären Sie sich mit unseren <a href="/">Allgemeinen Geschäftsbedingungen</a> einverstanden.<br/>
+			Bitte informieren Sie sich über die geltende <a href="https://dsgvo-gesetz.de/">DSGVO!<a/></div>
+			</div>
+			
+
+	
+</body>
+</html>

@@ -1,0 +1,18 @@
+ p{
+	 font-size:50px;
+	 font-family:"Raleway",sans-serif;
+	 text-align:center;
+	 margin-top:100px;
+
+ }
+ 
+ #countdown{
+	 font-size:90px;
+	 animation:pulsate 1s infinite;
+ }
+ 
+ @keyframes pulsate{
+ 0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+ 50% {opacity: 1.0;}
+ 100% {transform: scale(1.2, 1.2); opacity: 0.0;}
+ }

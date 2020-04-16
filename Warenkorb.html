@@ -1,0 +1,105 @@
+<!doctype html>
+
+<html>
+<head>
+	<!--Eliminieren von Seitenrändern-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;}
+	</style>
+	<meta charset="utf-8" lang="de">
+	<title>FinN - Warenkorb</title>
+	<!--Stylesheet-->
+	<link href="warenkorbStyle.css" type="text/css" rel="stylesheet">	
+	<!-- Script -->
+   <script src="Warenkorb.js"></script>
+   <script src="Startseite.js"></script>
+   <!-- Schriftart -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 	
+</head>	
+
+<!-- Abfrage ob schon eingeloggt -->
+<body onload="fuellen();actualPrice('0');actualPrice('1');actualPrice('2');summe();">
+	<header>	
+			<!--LogIn-Formular-->
+			<div id="HeaderLogin">	
+				<!--Fin-Bild-->
+				<div><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div>	
+				<!--Seitentitel-->
+				<!--<div id="titleT"><h1>Nachhilfe</h1></div>	-->
+				<!-- Warenkorb + Profilschriftzug wenn eingeloggt-->
+				<div id="warenkorb">
+					<img src="Bilder/warenkorb.jpg" height="40px" align="right" id="warenkorb_Bild">
+					<a href="Profil.html" ><span id="profil">Mein Profil</span></a>	
+					<span id="warenNr">0/3</span>
+				</div>	
+			</div>
+	</header>
+
+<!-- Überschriften -->	
+	<div id="titleT">Warenkorb</div>
+	<div id="gebuehr">Grundgebühr: 9.99€/Monat</div>
+	
+<!-- Produkt 1 -->
+	<div class="container" id="div0">
+		<input class="inputWare" type="text" id="name0" placeholder="Name" autocomplete="off" readonly>
+		<input class="inputWare" type="text" id="fach0" placeholder="Fach" autocomplete="off" readonly>
+		<input class="inputWare" type="text" id="zeit0" placeholder="Zeiten" autocomplete="off" readonly>
+		<input class="inputWare" type="text" id="Ort0" placeholder="Ort" autocomplete="off" readonly>
+		<div style="white-space:nowrap;display:inline;">
+		<label for="Menge0" style="margin-left:50px;font-family:'Raleway',sans-serif;" >Monate: </label>
+		<input class="inputWare" type="number" id="Menge0" value="1" min="1" max="12" autocomplete="off" onchange="actualPrice('0');summe()">
+		</div>
+		<div style="white-space:nowrap;display:inline;">
+		<label for="preis0" style="margin-left:50px;font-family:'Raleway',sans-serif;">Preis in €:</label>
+		<input type="text" class="inputWare" id="preis0" value="9.99" readonly onchange="summe();"></br>
+		</div>
+		<img src="Bilder/muell.jpg" height="50px" id="loeschen" onclick="clear_element('0');">
+	</div>
+
+<!-- Produkt 2 -->
+	<div class="container" id="div1">
+		<input class="inputWare" type="text" id="name1" placeholder="Name" autocomplete="off" readonly>
+		<input class="inputWare" type="text" id="fach1" placeholder="Fach" autocomplete="off" readonly>
+		<input class="inputWare" type="text" id="zeit1" placeholder="Zeiten" autocomplete="off" readonly>
+		<input class="inputWare" type="text" id="Ort1" placeholder="Ort" autocomplete="off" readonly>
+		<div style="white-space:nowrap;display:inline;">
+		<label for="Menge1" style="margin-left:50px;font-family:'Raleway',sans-serif;" >Monate: </label>
+		<input class="inputWare" type="number" id="Menge1" value="1" min="1" max="12" autocomplete="off" onchange="actualPrice('1');summe()">
+		</div>
+		<div style="white-space:nowrap;display:inline;">
+		<label for="preis1" style="margin-left:50px;font-family:'Raleway',sans-serif;">Preis in €:</label>
+		<input type="text" class="inputWare" id="preis1" value="9.99" readonly onchange="summe();"></br>
+		</div>
+		<img src="Bilder/muell.jpg" height="50px" id="loeschen" onclick="clear_element('1');">
+	</div>
+	
+<!-- Produkt 3 -->
+	<div class="container" id="div2">
+		<input class="inputWare" type="text" id="name2" placeholder="Name" autocomplete="off" readonly>
+		<input class="inputWare" type="text" id="fach2" placeholder="Fach" autocomplete="off" readonly>
+		<input class="inputWare" type="text" id="zeit2" placeholder="Zeiten" autocomplete="off" readonly>
+		<input class="inputWare" type="text" id="Ort2" placeholder="Ort" autocomplete="off" readonly>
+		<div style="white-space:nowrap;display:inline;">
+			<label for="Menge2" style="margin-left:50px;font-family:'Raleway',sans-serif;" >Monate: </label>
+			<input class="inputWare" type="number" id="Menge2" value="1" min="1" max="12" autocomplete="off" onchange="actualPrice('2');summe()">
+		</div>
+		<div style="white-space:nowrap;display:inline;">
+			<label for="preis2" style="margin-left:50px;font-family:'Raleway',sans-serif;">Preis in €:</label>
+			<input type="text" class="inputWare" id="preis2" value="9.99" readonly></br>
+		</div>
+		<img src="Bilder/muell.jpg" height="50px" id="loeschen" onclick="clear_element('2');">
+	</div>
+
+<!-- Summe -->
+	<div id="summe">Gesamtsumme: </div>
+
+<!-- Buttons -->
+	<div id="buttons">
+	<button id="buchen" onclick="sicherung();">Buchen!</button>
+	<a href="Startseite.html"><button id="abbrechen">Abbrechen</button></a>
+	</div>
+</body>
+</html>

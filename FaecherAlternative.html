@@ -1,0 +1,145 @@
+ <!doctype html>
+
+<html>
+<head>
+	<!--Eliminieren von Seitenrändern-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;}
+	</style>
+	<meta charset="utf-8" lang="de">
+	<title>Fin Nachhilfeportal</title>
+	<!--Stylesheet-->
+	<link href="faecherAlternativeStyle.css" type="text/css" rel="stylesheet">	
+	<!-- Script -->
+	<script src="FaecherAlternative.js"></script>
+	<script src="Startseite.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 	
+</head>	
+
+<!-- Abfrage ob schon eingeloggt -->
+<body onload="logInAbfrage(); studienfaecher(); buchungEnabled();">
+	<header>	
+			<!--LogIn-Formular-->
+			<div id="HeaderLogin">	
+				<!--Fin-Bild-->
+				<div id="logo"><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div>	
+				<!--Seitentitel-->
+				<!--<div id="titleT"><h1>Nachhilfe</h1></div>	-->
+				<!-- Warenkorb + Profilschriftzug wenn eingeloggt-->
+				<div id="warenkorb">
+					<a href="Warenkorb.html" ><img src="Bilder/warenkorb.jpg" height="40px" align="right" id="warenkorb_Bild"></a>
+					<a href="Profil.html" ><span id="profil">Mein Profil</span></a>	
+					<span id="warenNr"></span>
+				</div>	
+				<!-- Anmeldebereich -->
+				<div id="anmelden">
+					<!--Textfeld: Benutzer-->
+					<input type="text" id="benutzer" size="20" placeholder="Benutzername" maxlength="6" required onkeydown ="if (event.keyCode == 13)
+                        document.getElementById('loginB').click();">
+					<!--Textfeld: Passwort-->
+					<input type="password" id="passwort" size="20" placeholder="Passwort" required onkeydown ="if (event.keyCode == 13)
+                        document.getElementById('loginB').click();">			
+					<div id="login">
+						<!-- login-Button-->
+							<input type="button" id="loginB" value="LogIn" onclick="logIn();">	
+						<!--Registrationsschriftzug mit Link zur Registrierung -->
+						<a href="Registrierung.html" target="_blank"><span id="reg">Jetzt registrieren!</span></a>						
+					</div>
+				</div>
+			</div>
+	</header>
+	
+		<!-- sichtbarer Navigationsbereich -->
+	<div style="white-space:nowrap;">
+		<nav id="naviStart">															
+			<ul>
+				<li><div class="inactive"><a href="Startseite.html">Home</a></div></li>
+				<!-- Studiengängschriftzug als Button mit Dreieck (#9660) daneben -->
+				<li><div style="background-color:transparent;text-decoration:underline;" disabled>Studiengänge <span id="dreieck">&#9660;</span></div></li>
+				<li><div class="inactive"><a href="Ueber_uns.html" >Über uns </a></div></li>
+				<li><div class="inactive"><a href="Impressum.html" >Impressum</a></div></li>
+			</ul>
+		</nav>
+	</div>	
+		<!-- ausklappbarer Navigationsbereich -->
+		<nav id="subNav">
+			<ul>
+				<li><div class="inactive" id="infL" onclick="sessionStorage.setItem('study','inf');"><a href="FaecherAlternative.html">Informatik</a></div></li>
+				<li><div class="inactive" id="wifL" onclick="sessionStorage.setItem('study','wif');"><a href="FaecherAlternative.html">Wirtschaftsinformatik</a></div></li>
+				<li><div class="inactive" id="ingInfL" onclick="sessionStorage.setItem('study','ingInf');"><a href="FaecherAlternative.html">Ingenieursinformatik</a></div></li>
+				<li><div class="inactive" id="cvL" onclick="sessionStorage.setItem('study','cv');"><a href="FaecherAlternative.html">Computervisualistik</a></div></li>
+			</ul>
+		</nav>
+
+<!-- Informatik -->
+<div class="studiengang" id="inf">
+	<img src="Bilder/regelstudienplan_inf.png" height="400px" style="position:absolute;">
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:51px; width:119px; bottom:123px; left:111px;" onclick="sessionStorage.setItem('fach','Mathematik 1');"></div></a>	<!--Mathe1-->
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:24px; width:118px; bottom:150px; left:234px;" onclick="sessionStorage.setItem('fach','Mathematik 2');"></div></a> <!--Mathe2-->
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:24px; width:120px; bottom:338px; left:111px;" onclick="sessionStorage.setItem('fach','Einführung in die Informatik');"></div></a> <!--EinfInf-->
+	<div class="faecherW" style="cursor:auto; height:122px; width:242px; bottom:240px; left:607px;" onmouseover="wahlpflichtEinblenden('inf');" onmouseout="wahlpflichtAusblenden('inf');"></div> <!--Wahlpflicht-->
+</div>	
+<div id="wahlpflichtinf" onmouseover="wahlpflichtEinblenden('inf');" onmouseout="wahlpflichtAusblenden('inf');">
+	<ul>
+		<li ><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Bioinformatik');">Bioinformatik</a></li>
+		<li ><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Data Mining - Einführung in Data Mining 2');">Data Mining - Einführung in Data Mining 2</a></li>
+		<li ><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Human Learner-Interaction');">Human Learner-Interaction</a></li>
+	</ul>
+</div>
+
+<!-- Computervisualistik -->
+<div class="studiengang" id="cv">
+	<img src="Bilder/regelstudienplan_cv.png" height="500px" style="position:absolute;">
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:51px; width:117px; bottom:86px; left:107px;" onclick="sessionStorage.setItem('fach','Mathematik 1');"></div></a> <!--Mathe1-->
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:25px; width:118px; bottom:112px; left:226px;" onclick="sessionStorage.setItem('fach','Mathematik 2');"></div></a> <!--Mathe2-->
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:24px; width:116px; bottom:338px; left:109px;" onclick="sessionStorage.setItem('fach','Einführung in die Informatik');"></div></a> <!--EinfInf-->
+	<div class="faecherW" style="cursor:auto; height:122px; width:355px; bottom:198px; left:467px;" onmouseover="wahlpflichtEinblenden('cv');" onmouseout="wahlpflichtAusblenden('cv');"></div>
+</div>
+<div id="wahlpflichtcv" onmouseover="wahlpflichtEinblenden('cv');" onmouseout="wahlpflichtAusblenden('cv');">
+	<ul>
+		<li><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Medizinische Bildverarbeitung');">Medizinische Bildverarbeitung</a></li>
+		<li><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Technische Aspekte der IT-Sicherheit');">Technische Aspekte der IT-Sicherheit</a></li>
+		<li><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Mesh-Processing');">Mesh-Processing</a></li>
+	</ul>
+</div>
+
+
+<!-- Wirtschaftsinformatik -->
+<div class="studiengang" id="wif">
+	<img src="Bilder/regelstudienplan_wif.png" height="500px" style="position:absolute;">
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:30px; width:115px; bottom:336px; left:110px;" onclick="sessionStorage.setItem('fach','Mathematik 1');"></div></a> <!--Mathe1-->
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:30px; width:115px; bottom:336px; left:226px;"onclick="sessionStorage.setItem('fach','Mathematik 2');"></div></a> <!--Mathe2-->
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:65px; width:116px; bottom:118px; left:109px;"onclick="sessionStorage.setItem('fach','Einführung in die Informatik');"></div></a> <!--EinfInf-->
+	<div class="faecherW" style="cursor:auto; height:52px; width:581px; bottom:200px; left:227px;" onmouseover="wahlpflichtEinblenden('wif');" onmouseout="wahlpflichtAusblenden('wif');"></div>
+</div>
+<div id="wahlpflichtwif" onmouseover="wahlpflichtEinblenden('wif');" onmouseout="wahlpflichtAusblenden('wif');">
+	<ul>
+		<li><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Logik');">Logik</a></li>
+		<li><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Technische Aspekte der IT-Sicherheit');">Technische Aspekte der IT-Sicherheit</a></li>
+		<li><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Informatik');">Informatik</a></li>
+	</ul>
+</div>
+
+
+<!-- Ingenieursinformatik -->
+<div class="studiengang" id="inginf">
+	<img src="Bilder/regelstudienplan_inginf.png" height="500px" style="position:absolute;">
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:56px; width:130px; bottom:57px; left:117px;" onclick="sessionStorage.setItem('fach','Mathematik 1');"></div></a> <!--Mathe1-->
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:28px; width:126px; bottom:86px; left:249px;" onclick="sessionStorage.setItem('fach','Mathematik 2');"></div></a> <!--Mathe2-->
+	<a class="link" href="Lehrer.html"><div class="faecher" style="height:56px; width:128px; bottom:305px; left:116px;" onclick="sessionStorage.setItem('fach','Einführung in die Informatik');"></div></a> <!--EinfInf-->
+	<div class="faecherW" style="cursor:auto; height:54px; width:520px; bottom:229px; left:380px;" onmouseover="wahlpflichtEinblenden('inginf');" onmouseout="wahlpflichtAusblenden('inginf');"></div>
+</div>
+<div id="wahlpflichtinginf" onmouseover="wahlpflichtEinblenden('inginf');" onmouseout="wahlpflichtAusblenden('inginf');">
+	<ul>
+		<li ><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Computernetze');">Computernetze</a></li>
+		<li ><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Technische Aspekte der IT-Sicherheit');">Technische Aspekte der IT-Sicherheit</a></li>
+		<li ><a href="Lehrer.html" class="wahlpflichtFaecher" onclick="sessionStorage.setItem('fach','Bauelemente der Leistungselektronik');">Baulemente der Leistungselektronik</a></li>
+	</ul>
+</div>
+<div id="logInAlert">LogIn erfolgreich!</div>
+<div id="loginWarning">Loggen Sie sich bitte mit ihrem Nutzerkonto ein und laden Sie die Seite neu, um die angebotenen Fächer belegen zu können!</div>
+</body>
+</html>		

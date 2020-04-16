@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html>
+<head>
+	<!--Eliminieren von Seitenrändern-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;}
+	</style>
+	<meta charset="utf-8">
+	<title>Fin Nachhilfeportal</title>
+	<link type="text/css" href="startStyle.css" rel="stylesheet">
+	<script src="Startseite.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+</head>
+
+<body onload="logInAbfrage();">
+	<header>	
+			<!--LogIn-Formular-->
+			<div id="HeaderLogin">
+				<!--Fin-Bild-->
+				<div><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div>	
+				<!--Seitentitel-->
+				<!--<div id="titleT"><h1 id="title">Nachhilfe</h1></div>-->	
+				<!-- Warenkorbsymbol mit Zahl + Profilschriftzug nach erfolgreichem Login -->
+				<div id="warenkorb">
+					<a href="Warenkorb.html" ><img src="Bilder/warenkorb.jpg" height="40px" align="right" id="warenkorb_Bild"></a>
+					<a href="Profil.html" ><span id="profil">Mein Profil</span></a>
+					<span id="warenNr">0/3</span>
+				</div>		
+				<!-- Anmeldefelder -->	
+				<div id="anmelden">
+					<!--Textfeld: Benutzer-->
+					<input type="text" id="benutzer" size="20" placeholder="Benutzername" maxlength="6" required onkeydown ="if (event.keyCode == 13)
+                        document.getElementById('loginB').click();">
+					<!--Textfeld: Passwort-->
+					<input type="password" id="passwort" size="20" placeholder="Passwort" required onkeydown ="if (event.keyCode == 13)
+                        document.getElementById('loginB').click();">						
+					<div id="login">
+						<!--Button: LogIn mit Funktion zum Login-->
+						<input type="button" id="loginB" value="LogIn" onclick="logIn();">		
+						<!--Registrationsschriftzug mit Link zur Registrierung-->
+						<a href="Registrierung.html" target="_blank"><span id="reg">Jetzt registrieren!</span></a>			
+					</div>
+				</div>
+			</div>
+	</header>
+	
+		<!-- sichtbarer Navigationsbereich-->
+	<div style="white-space:nowrap;">
+		<nav id="naviStart">																							
+			<ul>
+				<li><div class="inactive"><a href="Startseite.html">Home</a></div></li>
+				<!-- Studiengängschriftzug als Button mit Dreieck (#9660) daneben -->
+				<li><div onmouseover="menuEinblenden();" onmouseout="menuAusblenden();" class="inactive">Studiengänge <span id="dreieck">&#9660;</span></div></li>
+				<li style="text-decoration:underline;">Über uns</li>
+				<li><div class="inactive"><a href="Impressum.html" >Impressum</a></div></li>
+			</ul>
+		</nav>
+	</div>	
+		<!-- ausklappbarer Navigationsbereich -->
+		<nav id="subNav" onmouseover="menuEinblenden();" onmouseout="menuAusblenden();">																								
+			<ul>
+				<li><div class="inactive" id="infL" onclick="sessionStorage.setItem('study','inf');"><a href="FaecherAlternative.html">Informatik</a></div></li>
+				<li><div class="inactive" id="wifL" onclick="sessionStorage.setItem('study','wif');"><a href="FaecherAlternative.html">Wirtschaftsinformatik</a></div></li>
+				<li><div class="inactive" id="ingInfL" onclick="sessionStorage.setItem('study','ingInf');"><a href="FaecherAlternative.html">Ingenieursinformatik</a></div></li>
+				<li><div class="inactive" id="cvL" onclick="sessionStorage.setItem('study','cv');"><a href="FaecherAlternative.html">Computervisualistik</a></div></li>
+			</ul>
+		</nav>	
+		<!-- eingeblendete Nachricht unten links, wenn login erfolgreich -->
+		<div id="logInAlert">LogIn erfolgreich!</div>
+		<div id="inhaltU">FinN unterstützt Dich dabei dein Studium erfolgreich abzuschließen, indem Nachhilfe von Studis für
+						Studis vermittelt wird.</p>
+						Uns ist eine starke Gemeinschaft wichtig. Sowohl Trainer als auch Schüler sollen auf einer Ebene
+						agieren. Niemand soll Angst haben vermeintlich „dumme“ Fragen zu stellen. Die Vernetzung unter
+						den Trainern und Schülern ist genauso erwünscht, wie auch Lerntandems. So wird aus dem
+						Lehrenden, auch mal der Lernende und andersherum. Im Idealfall wird zeitgleich auch die Basis für
+						neue Freundschaften geschaffen. Respektvoll, persönlich und freundschaftlich – so lauten unsere
+						Grundsätze für eine Nachhilfe der besonderen Art.</p>
+						Warum das Ganze?</p>
+						Viele von uns kommen irgendwann an den Punkt, wo eine Übungsaufgabe oder sogar ein ganzes
+						Fach zu schwierig erscheinen und ein Weiterkommen unmöglich erscheint. Das ist auch nichts
+						Verwerfliches, schließlich studieren wir eines der schwersten Studienfächer, die es gibt. Wir haben
+						alle ganz unterschiedliche Kompetenzen und können uns gegenseitig zum Erfolg führen. Lerngruppen
+						sind dafür natürlich auch ein bewährtes Mittel, aber wenn keine passende Lerngruppe zur Verfügung
+						steht, Du vielleicht sogar etwas schüchtern bist einfach mal Kommilitonen anzusprechen, Du einfach
+						ein anderes Lerntempo hast oder auch die Lerngruppe selber nicht weiterkommt, dann wird es schon
+						schwierig. Zudem ist es trotz der guten Vernetzung an der Fin manchmal schwierig, wirklich an
+						passende Hilfe zu gelangen. FinN gestaltet die Sache nun etwas effektiver, indem sich alle gewillten
+						Nachhilfetrainer und auch Nachhilfesuchenden registrieren können und so Kontakt zu Schülern bzw.
+						Lehrenden bekommen können.<p/><!--<br/>
+						Was ist die Fakultät für Informatik?<p/>
+						<iframe style="border:1px solid black; box-shadow: 2px 2px 2px 2px gray;" width="640" height="360" src="http://www.youtube.com/embed/43B6p2G433E?feature=player_embedded" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+		</div>
+</body>
+</html>

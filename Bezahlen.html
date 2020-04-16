@@ -1,0 +1,55 @@
+<!--INFORMATION: 
+
+		Dieses Template ist alleine nicht funtionstüchtig,
+		da Informationen wie die verlinkten Seiten noch geschrieben sind,
+		aber die dafür notwendigen Dateien nicht in diesem Ordner. 
+		Somit müssen diese erst nachimplementiert werden. 
+-->
+
+<!doctype html>
+
+<html>
+<head>
+	<!--Eliminieren von Seitenrändern-->
+	<style type="text/css">																								
+		html,body{
+		margin: 0px;
+		padding: 0px;}
+	</style>
+	<meta charset="utf-8" lang="de">
+	<title>FinN - Bezahlung</title>
+	<!--Stylesheet-->
+	<link href="bezahlenStyle.css" type="text/css" rel="stylesheet">	
+	<!-- Script -->
+   <script src="Bezahlen.js"></script>
+   <!-- Schriftart -->
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 	
+</head>	
+
+<!-- Abfrage ob schon eingeloggt -->
+<body onload="logInAbfrage()">
+	<header>	
+			<div id="HeaderLogin">	
+				<!--Fin-Bild-->
+				<a href="Startseite.html"><div><img src="Bilder/Elefantskizze.png" alt="Fin" height="140px" align="left"></div></a>	
+			</div>
+	</header>
+	
+<!-- Bezahlmöglichkeiten -->
+	<div id="title">Wie möchten Sie bezahlen?</div>
+	<div id="schrift">---------</div>
+	<div id="Main">
+		<!-- Paypal -->
+		<a href="Counter.html" target="_blank"><img src="Bilder/PayPal_2014_logo.png" alt="PayPal_logo" class="bild" onmouseover="document.getElementById('schrift').innerHTML='Paypal';document.getElementById('schrift').style.color='black';" onmouseout="document.getElementById('schrift').style.color='white';"></a>
+		<!-- Sofortüberweisung -->
+		<a href="Counter.html" target="_blank"><img src="Bilder/Sofortüberweisung_Logo.png" class="bild" onmouseover="document.getElementById('schrift').innerHTML='Sofortüberweisung';document.getElementById('schrift').style.color='black';" onmouseout="document.getElementById('schrift').style.color='white';"></a>
+		<!-- Kreditkarte -->
+		<a href="Counter.html" target="_blank"><img src="Bilder/Visa_card.jpg" alt="z.B. Visakarte" class="bild" onmouseover="document.getElementById('schrift').innerHTML='Kreditkarte';document.getElementById('schrift').style.color='black';" onmouseout="document.getElementById('schrift').style.color='white';"></a>
+		<!-- AmazonPay -->
+		<a target="_blank" href="Counter.html"><img src="Bilder/AmazonPay.png" alt="Amazon_logo" class="bild" onmouseover="document.getElementById('schrift').innerHTML='Amazon Pay';document.getElementById('schrift').style.color='black';" onmouseout="document.getElementById('schrift').style.color='white';"></a></br>
+		<a href="Warenkorb.html"><button>Abbrechen</button></a>
+	</div>
+		
+</body>
+</html>
